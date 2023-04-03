@@ -7,6 +7,7 @@
 }
 
 .game-board{
+    font-family: 'VT323', monospace;
     width: 100%;
     height: 700px;
     border-bottom: 50px solid #23a023;
@@ -14,6 +15,17 @@
     position: relative;
     overflow: hidden;
     background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+.game-board h2{
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    position: absolute;
+    left: 50%;
+}
+
+#record{
+    left: 1700px;
 }
 
 .game-board p{

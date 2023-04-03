@@ -1,18 +1,19 @@
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe')
 const result = document.querySelector('#result');
-var lost = false;
+var cont = 0;
+const contador = document.querySelector('#cont');
+const record = document.querySelector('#record');
 
 const jump = () => {
     mario.classList.add('jump');
-
     setTimeout(() => {
         mario.classList.remove('jump');
     }, 500);
 }
 
 const reload = () => {
-    window.location.reload();
+    window.location.reload()
 }
 
 const loop = setInterval(() => {
@@ -23,7 +24,6 @@ const loop = setInterval(() => {
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
 
     if(pipePosition <= 120 && pipePosition > 0 && marioPosition < 81){
-
         mario.style.animation = 'none'
         mario.style.bottom = `${marioPosition}px`
 
@@ -37,12 +37,15 @@ const loop = setInterval(() => {
         result.classList.add('game-over');
         result.innerHTML = 'Game over';
 
-        lost = true;
+        record.innerHTML = `Record: ${cont}`
         clearInterval(loop);
+    }
+    else{
+        cont++
+        contador.innerHTML = `${cont}`;
     }
 
 }, 10);
-
 
 
 document.addEventListener("keydown", function(event) {
