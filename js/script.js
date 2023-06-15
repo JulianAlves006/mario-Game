@@ -45,6 +45,13 @@ const loop = setInterval(() => {
         contador.innerHTML = `${cont}`;
     }
 
+    if(cont >= 1500){
+        pipe.style.animation = 'pipe-animation 1s infinite linear';
+    }
+    else if(cont >= 2000){
+        pipe.style.animation = 'pipe-animation 0.5s infinite linear';
+    }
+
 }, 10);
 
 
